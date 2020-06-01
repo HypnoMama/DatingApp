@@ -4,3 +4,5 @@ obj
 *.db
 *Forecast*
 appsettings.json
+datingapp.db-shm
+datingapp.db-wal
