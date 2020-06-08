@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using DatingApp.API.Data;
@@ -48,6 +50,27 @@ namespace DatingApp.API.Controllers
             var save = await _repo.SaveAll();
             return Ok("User added");
         }
+
+        [HttpPut("{id}")] 
+        public async Task<IActionResult> UpdateUser(int id, UserForUpdateDto userForUpdate) {
+            
+            //check that user updating matches token that server is receiving
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)) 
+            {
+                return Unauthorized();
+            }
+            var userFromRepo = await _repo.GetUser(id);
+            
+            //map userForUpdate to userFromRepo so we can store it back 
+            _mapper.Map(userForUpdate, userFromRepo);
+            
+            if (await _repo.SaveAll())
+                return NoContent();
+            
+            throw new Exception($"Update user {id} failed on save!");
+        }
+
+
 
     }
 }
