@@ -93,7 +93,7 @@ export class PhotoEditorComponent implements OnInit {
 
   deletePhoto(photoId: number) {
     //confirm with user if they want to delete first
-    this.alertify.confirm("Are you sure you want to delete this phto?", () => {
+    this.alertify.confirm("Are you sure you want to delete this photo?", () => {
       this.userService.deletePhoto(photoId, this.authService.decodedToken.nameid)
       .subscribe(() => {
         this.photos = this.photos.filter(photo => photo.id != photoId)
