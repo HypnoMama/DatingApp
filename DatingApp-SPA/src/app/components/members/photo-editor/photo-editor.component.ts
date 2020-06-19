@@ -67,6 +67,14 @@ export class PhotoEditorComponent implements OnInit {
           isMain: res.isMain
         };
         this.photos.push(photo);
+        if (photo.isMain) {
+           //Change the authService photoUrl observable to chosen photo -> all components subscribed to this will change (app and nav)
+        this.authService.changeMemberPhoto(photo.url);
+        //change the currentUser in authService's photo url to the one selected
+        this.authService.currentUser.photoUrl = photo.url;
+        //persist this change to localStorage
+        localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
+        }
       }
     }
   }

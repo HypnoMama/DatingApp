@@ -49,15 +49,14 @@ export class AuthService {
   }
 
   //send user information to register, will retrieve a token, set it which should log in the user
-  register(model) {
-    console.log("in register:" + model.username)
-    return this.http.post(this.baseUrl + "register", model); 
+  register(user: User) {
+    console.log("in register:" + user.userName)
+    return this.http.post(this.baseUrl + "register", user); 
   }
 
   loggedIn() {
     const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token);
   }
-
 
 }

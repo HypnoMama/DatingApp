@@ -24,9 +24,11 @@
     "bootstrap": "^4.5.0",
     "bootswatch": "^4.5.0",
     "font-awesome": "^4.7.0",
+    "install": "^0.13.0",
     "ng2-file-upload": "^1.4.0",
     "ngx-bootstrap": "^5.6.1",
     "ngx-gallery-9": "^1.0.6",
+    "ngx-timeago": "^1.0.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

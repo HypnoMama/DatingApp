@@ -10,6 +10,7 @@ export class MemberCardComponent implements OnInit {
 
   @Input()
   user: User;
+  defaultPic: string = "../../../assets/original.png"
 
   constructor() { }
 

@@ -8,6 +8,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './components/value/value.component';
@@ -60,6 +62,8 @@ export function tokenGetter() {
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
+    TimeagoModule.forRoot(),
     TabsModule.forRoot(),
     BsDropdownModule.forRoot(),
     AppRoutingModule,

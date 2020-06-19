@@ -12,6 +12,7 @@ export class NavComponent implements OnInit {
 
   model: any  = {};
   photoUrl: string;
+  defaultPic: string =  "../../assets/original.png";
 
   constructor(public authService: AuthService, private alertify: AlertifyService,
     private router: Router) { }

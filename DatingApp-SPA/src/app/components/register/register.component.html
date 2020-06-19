@@ -10,6 +10,9 @@
       <label class="radio-inline ml-3">
         <input class="mr-3" type="radio" value="female" formControlName="gender">Female
       </label>
+      <label class="radio-inline ml-3">
+        <input class="mr-3" type="radio" value="other" formControlName="gender">Other
+      </label>
     </div>
   
     <div class="form-group">
@@ -29,9 +32,10 @@
 
     <div class="form-group">
       <input [ngClass]="{'is-invalid': registerForm.get('dateOfBirth').errors && registerForm.get('dateOfBirth').touched}" class="form-control"
-        placeholder="Date of Birth" formControlName="dateOfBirth" type="date" >
+        placeholder="Date of Birth" formControlName="dateOfBirth" type="text" bsDatepicker [bsConfig]="bsConfig" >
       <div class="invalid-feedback" *ngIf="registerForm.get('dateOfBirth').touched && registerForm.get('dateOfBirth').hasError('required')">Date of Birth is required</div>
     </div>
+    
 
     <div class="form-group">
       <input [ngClass]="{'is-invalid': registerForm.get('city').errors && registerForm.get('city').touched}" class="form-control"
@@ -82,7 +86,7 @@
     </div>
   
     <div class="form-group text-center">
-      <button class="btn btn-success" type="submit">Register</button>
+      <button [disabled]="!registerForm.valid" class="btn btn-success" type="submit">Register</button>
       <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
     </div>
     

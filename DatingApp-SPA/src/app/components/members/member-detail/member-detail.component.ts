@@ -13,6 +13,7 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 export class MemberDetailComponent implements OnInit {
 
   user: User;
+  defaultPic: string =  '../../../assets/original.png';
 
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
