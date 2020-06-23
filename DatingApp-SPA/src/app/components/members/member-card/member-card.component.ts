@@ -20,6 +20,7 @@ export class MemberCardComponent implements OnInit {
               private alertify: AlertifyService) { }
 
   ngOnInit() {
+    
   }
 
   sendLike(id: number) {

@@ -28,6 +28,7 @@ export class MemberListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
+      console.log(data)
       this.Users = data['users'].result;
       this.pagination = data['users'].pagination;
     });
