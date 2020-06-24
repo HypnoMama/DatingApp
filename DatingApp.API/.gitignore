@@ -6,3 +6,4 @@ obj
 appsettings.json
 datingapp.db-shm
 datingapp.db-wal
+wwwroot

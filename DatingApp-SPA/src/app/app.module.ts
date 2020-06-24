@@ -14,7 +14,6 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons'
 
 import { AppComponent } from './app.component';
-import { ValueComponent } from './components/value/value.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './components/home/home.component';
@@ -49,7 +48,6 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    ValueComponent,
     NavComponent,
     HomeComponent,
     RegisterComponent,

@@ -151,7 +151,8 @@ namespace DatingApp.API.Data
             }
 
             messages = messages.OrderByDescending(d => d.MessageSent);
-            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
+            return await PagedList<Message>
+                    .CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
