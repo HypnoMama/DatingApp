@@ -50,7 +50,6 @@ export class AuthService {
 
   //send user information to register, will retrieve a token, set it which should log in the user
   register(user: User) {
-    console.log("in register:" + user.userName)
     return this.http.post(this.baseUrl + "register", user); 
   }
 
